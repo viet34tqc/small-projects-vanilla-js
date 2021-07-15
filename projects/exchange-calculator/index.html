@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>Exchange Rate Calculator</h1>
+			<p>Choose the currency and the amounts to get the exchange rate</p>
+
+			<div class="currency-calculator">
+				<div class="currency ">
+					<select id="currency-one">
+						<option value="AED">AED</option>
+						<option value="ARS">ARS</option>
+						<option value="AUD">AUD</option>
+						<option value="BGN">BGN</option>
+						<option value="BRL">BRL</option>
+						<option value="BSD">BSD</option>
+						<option value="CAD">CAD</option>
+						<option value="CHF">CHF</option>
+						<option value="CLP">CLP</option>
+						<option value="CNY">CNY</option>
+						<option value="COP">COP</option>
+					</select>
+
+					<input type="number" id="amount-one" placeholder="0" value="1">
+				</div>
+
+				<div class="swap-container">
+					<button id="swap-btn">Swap</button>
+					<div class="swap-rate" id="rate"></div>
+				</div>
+
+				<div class="currency ">
+					<select id="currency-two">
+						<option value="AED">AED</option>
+						<option value="ARS">ARS</option>
+						<option value="AUD">AUD</option>
+						<option value="BGN">BGN</option>
+						<option value="BRL">BRL</option>
+						<option value="BSD">BSD</option>
+						<option value="CAD">CAD</option>
+						<option value="CHF">CHF</option>
+						<option value="CLP">CLP</option>
+						<option value="CNY">CNY</option>
+						<option value="COP">COP</option>
+					</select>
+
+					<input type="number" id="amount-two" placeholder="0">
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
