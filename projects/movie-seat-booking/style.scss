@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+:root {
+	--selected: #6feaf6;
+	--occupied: #fff;
+	--selectable: #444451;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #242333;
+	color: #fff;
+
+	font-family: 'Open Sans', sans-serif;
+
+	min-height: 100vh;
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: center;
+	justify-content: center;
+}
+
+header {
+	margin-bottom: 16px;
+}
+
+#movies-select {
+	margin-left: 12px;
+	padding: 6px 12px;
+	border: none;
+	border-radius: 4px;
+
+	background: #fff;
+	appearance: none;
+}
+
+.seats-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 16px;
+	justify-items: center;
+
+	margin-bottom: 24px;
+}
+
+.seats-col {
+	display: grid;
+	grid-gap: 6px;
+	grid-template-columns: repeat(2, min-content);
+
+	&--2 {
+		grid-template-columns: repeat(4, min-content);
+	}
+}
+
+.seat {
+	width: 14px;
+	height: 12px;
+	border-radius: 10px 10px 0 0;
+
+	background: var(--selectable);
+	cursor: pointer;
+
+	&.selected {
+		background: var(--selected);
+	}
+	&.occupied {
+		background: var(--occupied);
+	}
+}

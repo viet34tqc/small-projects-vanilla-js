@@ -15,8 +15,9 @@
 	};
 
 	function addError(input, message) {
-		errors[input].length = 0;
-		errors[input].push(message);
+        const id = input.id;
+		errors[id].length = 0;
+		errors[id].push(message);
 	}
 
 	function showError(input) {
@@ -42,13 +43,13 @@
 		const inputVal = input.value;
 		if (inputVal.length < min) {
 			addError(
-				input.id,
+				input,
 				`${getFieldName(input)} must be at least ${min} characters`
 			);
 			showError(input);
 		} else if (inputVal.length > max) {
 			addError(
-				input.id,
+				input,
 				`${getFieldName(input)} must be less than ${max} characters`
 			);
 			showError(input);
@@ -61,7 +62,7 @@
 		let isError = false;
 		inputs.forEach((input) => {
 			if (input.value.trim() === '') {
-				addError(input.id, `${getFieldName(input)} is required`);
+				addError(input, `${getFieldName(input)} is required`);
 				showError(input);
 			} else {
 				showSuccess(input);
@@ -76,7 +77,7 @@
 		if (regex.test(input.value.trim())) {
 			showSuccess(input);
 		} else {
-			addError(input.id, 'Email is not valid');
+			addError(input, 'Email is not valid');
 			showError(input);
 		}
 	}

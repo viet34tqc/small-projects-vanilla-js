@@ -1,0 +1,21 @@
+{
+	"name": "small-projects-vanilla-js",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"watch-js": "tsc -w",
+		"watch-css": "sass --watch --no-source-map ./projects:./projects",
+		"watch": "yarn watch-css && yarn watch-js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/viet34tqc/small-projects-vanilla-js.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/viet34tqc/small-projects-vanilla-js/issues"
+	},
+	"homepage": "https://github.com/viet34tqc/small-projects-vanilla-js#readme"
+}
