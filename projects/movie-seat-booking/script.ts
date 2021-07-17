@@ -1,83 +1,87 @@
-// Select the DOM
-const seatsContainer = document.querySelector(
-	'.seats-container'
-) as HTMLElement;
-const seats = document.querySelectorAll(
-	'.seat:not(.occupied)'
-) as NodeListOf<Element>;
-const movieSelect = document.getElementById(
-	'movies-select'
-) as HTMLSelectElement;
-const totalSeleted = document.querySelector(
-	'.total__selected'
-) as HTMLDivElement;
-const totalPrice = document.querySelector('.total__price') as HTMLDivElement;
+(function () {
+	'use strict;';
 
-// Select seat:
-// Change the UI
-// Update the total
-seatsContainer.addEventListener('click', (e) => {
-	const target = e.target as HTMLElement;
-	if (
-		target.classList.contains('seat') &&
-		!target.classList.contains('occupied')
-	) {
-		target.classList.toggle('selected');
-	}
+	// Select the DOM
+	const seatsContainer = document.querySelector(
+		'.seats-container'
+	) as HTMLElement;
+	const seats = document.querySelectorAll(
+		'.seat:not(.occupied)'
+	) as NodeListOf<Element>;
+	const movieSelect = document.getElementById(
+		'movies-select'
+	) as HTMLSelectElement;
+	const totalSeleted = document.querySelector(
+		'.total__selected'
+	) as HTMLDivElement;
+	const totalPrice = document.querySelector('.total__price') as HTMLDivElement;
 
-	updateTotal();
-	saveToLocalStorage();
-});
-
-// Handle when select the movie:
-// Update the total
-movieSelect.addEventListener('change', (e) => {
-	updateTotal();
-	saveToLocalStorage();
-});
-
-// Get the data from Local Storage and populate the UI
-function populateUI() {
-	const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
-	if (!selectedSeats || !selectedSeats.length) {
-		return;
-	}
-	[...seats].forEach((seat, index) => {
-		if (selectedSeats.includes(index)) {
-			seat.classList.add('selected');
+	// Select seat:
+	// Change the UI
+	// Update the total
+	seatsContainer.addEventListener('click', (e) => {
+		const target = e.target as HTMLElement;
+		if (
+			target.classList.contains('seat') &&
+			!target.classList.contains('occupied')
+		) {
+			target.classList.toggle('selected');
 		}
+
+		updateTotal();
+		saveToLocalStorage();
 	});
 
-	const selectedMovie = localStorage.getItem('selectedMovie');
-	if (selectedMovie) {
-		movieSelect.value = selectedMovie;
+	// Handle when select the movie:
+	// Update the total
+	movieSelect.addEventListener('change', (e) => {
+		updateTotal();
+		saveToLocalStorage();
+	});
+
+	// Get the data from Local Storage and populate the UI
+	function populateUI() {
+		const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+		if (!selectedSeats || !selectedSeats.length) {
+			return;
+		}
+		[...seats].forEach((seat, index) => {
+			if (selectedSeats.includes(index)) {
+				seat.classList.add('selected');
+			}
+		});
+
+		const selectedMovie = localStorage.getItem('selectedMovie');
+		if (selectedMovie) {
+			movieSelect.value = selectedMovie;
+		}
 	}
-}
 
-// Update the selected seats
-function updateTotal() {
-	const selectedSeats = document.querySelectorAll('.seat.selected');
-	const ticketPrice = +movieSelect.value;
-	const total = selectedSeats.length * ticketPrice;
+	// Update the selected seats
+	function updateTotal() {
+		const selectedSeats = document.querySelectorAll('.seat.selected');
+		const ticketPrice = +movieSelect.value;
+		const total = selectedSeats.length * ticketPrice;
 
-	totalSeleted.innerText = selectedSeats.length.toString();
-	totalPrice.innerText = total.toString();
-}
+		totalSeleted.innerText = selectedSeats.length.toString();
+		totalPrice.innerText = total.toString();
+	}
 
-// Update the price with selected seats retrieved from local storage.
-populateUI();
-updateTotal();
+	// Update the price with selected seats retrieved from local storage.
+	populateUI();
+	updateTotal();
 
-// Save to localStorage
-// - Save the indexes of selected seats
-// - Save the selected movie
-function saveToLocalStorage() {
-	const selectedSeats = document.querySelectorAll('.seat.selected');
-	const selectedIndexes = [...selectedSeats].map((seat) =>
-		[...seats].indexOf(seat)
-	);
-	const selectedMovie = movieSelect.value;
+	// Save to localStorage
+	// - Save the indexes of selected seats
+	// - Save the selected movie
+	function saveToLocalStorage() {
+		const selectedSeats = document.querySelectorAll('.seat.selected');
+		const selectedIndexes = [...selectedSeats].map((seat) =>
+			[...seats].indexOf(seat)
+		);
+		const selectedMovie = movieSelect.value;
 
-	localStorage.setItem('selectedSeats', JSON.stringify(selectedIndexes));
-	localStorage.setItem('selectedMovie', selectedMovie);
-}
+		localStorage.setItem('selectedSeats', JSON.stringify(selectedIndexes));
+		localStorage.setItem('selectedMovie', selectedMovie);
+	}
+})();
