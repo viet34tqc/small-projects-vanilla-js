@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"watch-js": "tsc -w",
-		"watch-css": "sass --watch --no-source-map ./projects:./projects",
+		"js": "tsc -w",
+		"css": "sass --watch --no-source-map ./projects:./projects",
 		"watch": "yarn watch-css && yarn watch-js"
 	},
 	"repository": {

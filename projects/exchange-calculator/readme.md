@@ -8,7 +8,7 @@
   - Each currency has a select and an input
     - Select for currency selection
     - Input for filling an amount of money
-- A swap button to swap 2 currency
+- A swap button for currency swapping
 
 ### Interaction
 
