@@ -4,7 +4,7 @@
 	"description": "",
 	"scripts": {
 		"js": "tsc -w",
-		"css": "sass --watch --no-source-map ./projects:./projects",
+		"css": "sass --watch --no-source-map ./:./",
 		"watch": "yarn watch-css && yarn watch-js"
 	},
 	"repository": {
