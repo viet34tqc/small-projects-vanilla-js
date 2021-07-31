@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+			integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>Memory Cards</h1>
+				<button class="btn btn--trigger-form">
+					<i class="fas fa-plus"></i>Add new card
+				</button>
+			</header>
+			<div class="cards-slider-wrapper"></div>
+			<nav class="cards-slider-navigation">
+				<button class="btn slider-arrow slider-prev">
+					<i class="fas fa-arrow-left"></i>
+				</button>
+				<button class="btn slider-arrow slider-next">
+					<i class="fas fa-arrow-right"></i>
+				</button>
+			</nav>
+		</div>
+
+		<div class="form-wrapper">
+			<div class="wrapper">
+				<header>
+					<h1>Add New Card</h1>
+					<button class="btn btn--close-form">
+						<i class="fas fa-times"></i>
+					</button>
+				</header>
+				<form id="add-new-form">
+					<div class="form-group">
+						<label for="question">Question</label>
+						<textarea
+							type="text"
+							name=""
+							id="question"
+							placeholder="Enter question..."
+						></textarea>
+						<div class="error"></div>
+					</div>
+					<div class="form-group">
+						<label for="answer">Answer</label>
+						<textarea
+							type="text"
+							name=""
+							id="answer"
+							placeholder="Enter answer..."
+						></textarea>
+						<div class="error"></div>
+					</div>
+					<button type="submit" class="btn">
+						<i class="fas fa-plus"></i>Add Card
+					</button>
+				</form>
+			</div>
+		</div>
+
+		<button class="btn btn--clear-cards">
+			<i class="fas fa-trash"></i>Clear cards
+		</button>
+		<script src="script.js"></script>
+	</body>
+</html>
