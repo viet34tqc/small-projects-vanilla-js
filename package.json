@@ -5,7 +5,7 @@
 	"scripts": {
 		"js": "tsc -w",
 		"css": "sass --watch --no-source-map ./:./",
-		"watch": "yarn watch-css && yarn watch-js"
+		"watch": "npm-run-all --parallel js css"
 	},
 	"repository": {
 		"type": "git",
@@ -17,5 +17,8 @@
 	"bugs": {
 		"url": "https://github.com/viet34tqc/small-projects-vanilla-js/issues"
 	},
-	"homepage": "https://github.com/viet34tqc/small-projects-vanilla-js#readme"
+	"homepage": "https://github.com/viet34tqc/small-projects-vanilla-js#readme",
+	"devDependencies": {
+		"yarn-run-all": "^3.1.1"
+	}
 }

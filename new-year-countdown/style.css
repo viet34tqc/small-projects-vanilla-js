@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+:root {
+  --c-body-bg: #296ca8;
+  --c-accent: #4992d3;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  background: url("https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80") no-repeat center/cover;
+  position: relative;
+}
+body:before {
+  content: "";
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 72px;
+}
+
+#new-year {
+  font-size: 200px;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.countdown {
+  display: grid;
+  grid-gap: 30px;
+  grid-auto-flow: column;
+  font-size: 64px;
+  text-align: center;
+}
+.countdown.hidden {
+  display: none;
+}
+.countdown__time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.countdown div {
+  font-size: 64px;
+  font-weight: bold;
+}
+.countdown small {
+  font-size: 18px;
+}
+
+#spinner {
+  display: block;
+  margin: 0 auto;
+}
