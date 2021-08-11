@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+:root {
+	--c-body-bg: #ffefea;
+	--c-accent: darksalmon;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	min-height: 100vh;
+
+	background-color: var(--c-body-bg);
+
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+h1 {
+	text-align: center;
+}
+
+.wrapper {
+	max-width: 1280px;
+	width: 100%; // set the initial width for the container
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.samples {
+	display: grid;
+	grid-gap: 32px;
+	grid-template-columns: repeat(2, 1fr);
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.sample {
+	border-radius: 10px;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	overflow: hidden;
+	transition: box-shadow 0.2s ease-out;
+	&.active {
+		box-shadow: 0 0 10px 5px var(--c-accent);
+	}
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
+	p {
+		text-transform: uppercase;
+		text-align: center;
+
+		color: #fff;
+		background: var(--c-accent);
+
+		margin: 0;
+		padding: 12px 0;
+	}
+}
+
+.btn {
+	padding: 8px 12px;
+	background: var(--c-accent);
+	color: #fff;
+	border: 0;
+	cursor: pointer;
+}
+
+#toggler {
+	margin: 24px auto;
+	display: table;
+}
+
+.text-box {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	width: 70%;
+	transform: translate(-50%, -800px);
+	background: #111;
+	color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	transition: 0.5s ease all;
+	&.is-active {
+		transform: translate(-50%, 0);
+	}
+
+	> * + * {
+		margin-top: 12px;
+	}
+
+	select {
+		background: var(--c-accent);
+		color: #fff;
+		border: 0;
+		font-size: 12px;
+		width: 100%;
+		padding: 8px;
+	}
+
+	textarea {
+		background: #fff;
+		border-radius: 5px;
+		width: 100%;
+		font-size: 16px;
+		padding: 8px;
+		height: 150px;
+	}
+	button {
+		width: 100%;
+	}
+
+	.close {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		padding: 4px 8px;
+		cursor: pointer;
+	}
+}

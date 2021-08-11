@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>Speech Text Reader</h1>
+			<button class="btn" id="toggler">Toggle Text Box</button>
+			<div class="samples">
+				<div class="sample">
+					<!-- If we don't specify image's height in the HTML
+					then we will have to declare it in the CSS
+					to prevent layout shifting.
+					Best practice is to set the image's height and width in the HTML
+					We don't apply lazy loading for the first 6 images because they are above the fold
+					-->
+					<img
+						width="450"
+						height="300"
+						src="https://source.unsplash.com/UkudQyyeovs/450x300"
+						alt=""
+					/>
+					<p>Spring rolls</p>
+				</div>
+				<div class="sample">
+					<img
+						width="450"
+						height="300"
+						src="https://source.unsplash.com/ubBWnvrsARk/450x300"
+						alt=""
+					/>
+					<p>Bread</p>
+				</div>
+				<div class="sample">
+					<img
+						width="450"
+						height="300"
+						src="https://source.unsplash.com/IGfIGP5ONV0/450x300"
+						alt=""
+					/>
+					<p>Vegan</p>
+				</div>
+				<div class="sample">
+					<img
+						width="450"
+						height="300"
+						src="https://source.unsplash.com/jpkfc5_d-DI/450x300"
+						alt=""
+					/>
+					<p>Salmon</p>
+				</div>
+				<div class="sample">
+					<img
+						width="450"
+						height="300"
+						src="https://source.unsplash.com/8beTH4VkhLI/450x300"
+						alt=""
+					/>
+					<p>Ice cream</p>
+				</div>
+				<div class="sample">
+					<img
+						width="450"
+						height="300"
+						src="https://source.unsplash.com/7cRBG4nQtKs/450x300"
+						alt=""
+					/>
+					<p>Chips</p>
+				</div>
+				<div class="sample">
+					<img
+						loading="lazy"
+						width="450"
+						height="300"
+						class="lazy"
+						data-src="https://source.unsplash.com/FjAtrgALvlc/450x300"
+						alt=""
+					/>
+					<p>Biscuit</p>
+				</div>
+				<div class="sample">
+					<img
+						loading="lazy"
+						width="450"
+						height="300"
+						class="lazy"
+						data-src="https://source.unsplash.com/VyHBlfvh2L4/450x300"
+						alt=""
+					/>
+					<p>Sausage</p>
+				</div>
+				<div class="sample">
+					<img
+						loading="lazy"
+						width="450"
+						height="300"
+						class="lazy"
+						data-src="https://source.unsplash.com/YpIKbBZtSWY/450x300"
+						alt=""
+					/>
+					<p>Cake</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="text-box" class="text-box">
+			<div id="close" class="close">X</div>
+			<h3>Choose Voice</h3>
+			<select id="voices"></select>
+			<textarea id="text" placeholder="Enter text to read..."></textarea>
+			<button class="btn" id="read">Read Text</button>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

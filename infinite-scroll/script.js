@@ -37,7 +37,7 @@
     }
     function handleLoading() {
         loader.classList.add('show');
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() => {
                 loader.classList.remove('show');
                 resolve(true);
