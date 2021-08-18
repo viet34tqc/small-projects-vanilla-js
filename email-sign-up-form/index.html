@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Email sign-up form</title>
+	</head>
+	<body>
+		<main class="wrapper flow">
+			<h1>Sign up for the latest update</h1>
+
+			<!-- Remove default validation -->
+			<form class="signup flow" action="" novalidate>
+				<label for="email">Email address</label>
+				<div>
+					<!-- autocapitalize="none" prevents the browser from capitalising the first letter of the input (iOS devices) -->
+					<input
+						type="email"
+						name="email"
+						placeholder="person@inbox.com"
+						id="email"
+						autocapitalize="none"
+						required
+					/>
+					<!-- Default type of button is submit -->
+					<button>
+						<span class="screen-reader-text">Submit email</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true"
+							focusable="false"
+							viewBox="0 0 24 24"
+						>
+							<path
+								d="M11.293 5.707L16.586 11H5a1 1 0 000 2h11.586l-5.293 5.293a.999.999 0 101.414 1.414l7-7a1.006 1.006 0 000-1.414l-7-7a.999.999 0 10-1.414 1.414z"
+							></path>
+						</svg>
+					</button>
+				</div>
+			</form>
+			<div class="signup__alert"></div>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>

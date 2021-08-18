@@ -1,3 +1,5 @@
+import { MILISECOND_DAY } from './constant';
+
 (function () {
 	'use strict;';
 
@@ -37,7 +39,7 @@
 			return;
 		}
 
-		let d = Math.floor(diff / 1000 / 3600 / 24);
+		let d = Math.floor(diff / MILISECOND_DAY);
 		let h = Math.floor(diff / 1000 / 3600) % 24; // the remainder of division total hours and the number of hours per day.
 		let m = Math.floor(diff / 1000 / 60) % 60;
 		let s = Math.floor(diff / 1000) % 60;
