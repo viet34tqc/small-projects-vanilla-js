@@ -1,0 +1,108 @@
+:root {
+  --c-day-bg: #0984e3;
+  --c-day-icon: #ffe4a1;
+  --c-night-icon: #b9c6d3;
+  --c-light: #ffffff;
+  --c-night: #252525;
+  --c-shadow-light: rgba(48, 48, 48, 0.15);
+  --c-shadow-mid: rgba(0, 0, 0, 0.25);
+  --c-shadow-dark: rgba(0, 0, 0, 0.9);
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--c-light);
+  color: var(--c-night);
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+body.night {
+  background-color: var(--c-night);
+  color: var(--c-light);
+}
+
+.toggle {
+  --thumb-size: 24px;
+  --thumb-space: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toggle__label {
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-weight: bold;
+}
+.toggle__checkbox {
+  position: absolute;
+  left: -9999px;
+}
+.toggle__visible {
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
+  width: calc(var(--thumb-size) * 2 + var(--thumb-space) * 2);
+  height: calc(var(--thumb-size) + var(--thumb-space) * 2);
+  border: 1px solid var(--c-day-bg);
+  border-radius: 25px;
+  position: relative;
+  background: var(--c-day-bg);
+}
+.toggle__thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: linear-gradient(229.84deg, rgba(255, 255, 255, 0) 14.29%, rgba(48, 48, 48, 0.15) 81.82%), #ffffff;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  will-change: transform;
+}
+:checked + .toggle__visible {
+  background: transparent;
+  border-color: var(--c-light);
+}
+:checked + .toggle__visible .toggle__thumb {
+  transform: translateX(100%);
+}
+
+.toggle__icon {
+  --transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+  	opacity 0.5s ease;
+  --delay: 1s;
+  position: absolute;
+  top: 50%;
+}
+.toggle__icon--light {
+  right: var(--thumb-space);
+  transform: translateY(-50%);
+  fill: var(--c-day-icon);
+  transition: var(--transition);
+  transition-delay: var(--delay);
+}
+.toggle__icon--night {
+  left: var(--thumb-space);
+  transform: translateY(-24px);
+  opacity: 0;
+  fill: var(--c-night-icon);
+  transition: none;
+}
+:checked + .toggle__visible .toggle__icon--light {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: none;
+}
+:checked + .toggle__visible .toggle__icon--night {
+  opacity: 1;
+  transform: translateY(-50%);
+  transition: var(--transition);
+  transition-delay: var(--delay);
+}
