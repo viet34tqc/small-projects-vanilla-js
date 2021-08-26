@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Relaxer</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>Relaxer</h1>
+			<div
+				class="circle-wrapper"
+				style="--totalTime: 8; --breathIn: 3; --hold: 2"
+			>
+				<div class="circle">Breath In</div>
+
+				<!-- The pointer-container rotates itself -->
+				<div class="pointer-container">
+					<div class="pointer"></div>
+				</div>
+				<div class="circle-gradient"></div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
