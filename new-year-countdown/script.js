@@ -1,4 +1,3 @@
-import { MILISECOND_DAY } from './constant';
 (function () {
     'use strict;';
     const newYearElem = document.getElementById('new-year');
@@ -25,6 +24,7 @@ import { MILISECOND_DAY } from './constant';
             countdownELem.innerHTML = 'Happy New Year';
             return;
         }
+        const MILISECOND_DAY = 1000 * 60 * 60 * 24;
         let d = Math.floor(diff / MILISECOND_DAY);
         let h = Math.floor(diff / 1000 / 3600) % 24; // the remainder of division total hours and the number of hours per day.
         let m = Math.floor(diff / 1000 / 60) % 60;
