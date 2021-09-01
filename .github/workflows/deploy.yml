@@ -13,4 +13,4 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           server-dir: ${{secrets.DIR}}
-          exclude: '**/.git* **/.git*/** **/node_modules/** fileToExclude.txt'
+          exclude: '**/.git/** **/.github/** **/node_modules/** fileToExclude.txt'

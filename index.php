@@ -38,7 +38,7 @@
     </section>
 
     <main>
-        <p class="intro">All the designs of these projects are taken from other repositories and tutorials. I'm using Sass as the CSS compiler. I also use TypeScript instead of vanilla JS for practicing.<br><strong><a href="https://github.com/viet34tqc/small-projects-vanilla-js">Link Github</a></strong></p>
+        <p class="intro">I use Sass as the CSS compiler and TypeScript instead of vanilla JS for practicing. Each project has its own readme file that provides details of the project. You can check it out in the github link below.<br><strong><a href="https://github.com/viet34tqc/small-projects-vanilla-js">Link Github</a></strong></p>
         <div class="projects">
             <?php foreach( $projects as $project ) : ?>
                 <a href="<?= $project['url'] ?>" class="project">
