@@ -1,19 +1,16 @@
-name: Deploy to titanweb.vn website.
+name: Deploy to small-js.
 on: push
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: Get latest code
+        uses: actions/checkout@master
       - name: git-ftp-action
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          ftp-server: ${{ secrets.URL }}
-          ftp-username: ${{ secrets.USER }}
-          ftp-password: ${{ secrets.PASSWORD }}
+          server: ${{ secrets.URL }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
           server-dir: ${{secrets.DIR}}
-          exclude:
-          - "**/.git*"
-          - "**/.git*/**"
-          - "**/node_modules/**"
-          - "fileToExclude.txt"
+          exclude: '**/.git* **/.git*/** **/node_modules/** fileToExclude.txt'
