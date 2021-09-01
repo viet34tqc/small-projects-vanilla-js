@@ -33,7 +33,7 @@
     <section class="hero">
         <div>
             <h1>Mini vanilla JS Projects</h1>
-            <p>JS Projects using nothing but HTML5, CSS & Javascript, no JS frameworks or library.</p>
+            <p>JS Projects using nothing but HTML5, CSS & Javascript, no JS frameworks or library</p>
         </div>
     </section>
 
